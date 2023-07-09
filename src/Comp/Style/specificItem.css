@@ -1,0 +1,25 @@
+/* Item.css */
+
+.item-container {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .item-image {
+    margin-right: 20px;
+  }
+  
+  .item-image img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-details h2 {
+    margin-bottom: 10px;
+  }

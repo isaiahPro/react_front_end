@@ -1,0 +1,124 @@
+.home {
+    width: 100vw;
+    overflow-x:hidden;
+    margin: 0 auto;
+    padding-right: 35px;
+  }
+  
+  .images {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .category-title {
+    font-size: 30px;
+    margin-top: 30px;
+    margin-bottom: 10px;
+    color: white;
+  }
+  
+  .category-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    list-style: none;
+    
+    margin: 0;
+  }
+  
+  .category-list li {
+    width: 30%;
+    margin-bottom: 20px;
+  }
+  
+  .category-list li img {
+    width: 100%;
+    height: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .category-list li p {
+    margin-top: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+  .footer {
+    background-color: #333;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  .footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  .home_welcome_text{
+    background-size:cover;
+    background-position:'center';
+    background-repeat: 'no-repeat';
+    width: 100vw;
+    height: 86vh;
+    color:white;
+    font-size:50px;
+    padding: 14%;
+  }
+  .home_welcome_text_inner{
+    background-color: rgba(57, 50, 50, 0.5);
+    padding: 20px;
+  }
+  hr{
+    border-color: white;
+    margin-top: 20px ;
+    border-width: thick;
+  }
+  .adminButton{
+    position: fixed;
+    top: 50%;
+    right: 5px;
+    transform: translate(20%);
+    writing-mode:vertical-rl;
+    text-orientation:sideways-right;
+    color: white;
+    height: 100px;
+    border-radius: 10px;
+    padding: 3px;
+    z-index: 3;
+    font-family: 'Abyssinica SIL', serif;
+    background-color: rgb(36, 126, 78);
+    text-decoration: none;
+  }
+  .itemlistwithPrice{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+    padding-left:30px;
+    padding-right:30px;
+    color:black;
+    font-family: 'Abyssinica SIL', serif;
+    background-color: rgb(205, 232, 201);
+  }
+  #itemlistwithPrice_price, #itemlistwithPrice_status {
+    font-size: large;
+  }
+
+  #innerspan_bold{
+    font-weight: bold;
+  }
+  #itemlistwithPrice_view{
+ 
+    background-color: orangered;
+    padding: 3px;
+    color: white;
+    text-decoration: none;
+    padding-right: 15px;
+    padding-left: 15px;
+    border-radius:10px ;
+  }
+  #itemlistwithPrice_view:hover{
+    background-color: rgb(234, 130, 92);
+  }

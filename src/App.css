@@ -1,0 +1,8 @@
+.App {
+  text-align: center;
+  background-image: url("./Comp/Asset/BackgroundImage02.jpg");
+  width: 100vw;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+}

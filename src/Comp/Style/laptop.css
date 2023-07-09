@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+.list-unstyled{
+  font-family: 'Abyssinica SIL', serif;
+  text-align: left;
+}
+.laptop_head{
+  font-family: 'Abyssinica SIL', serif;
+  color: white;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#laptop_list_container{
+  height: 40vh;
+}
+.card-title{
+  padding:0px;
+  margin: 0px;
+}
+.container{
+  padding-bottom: 100px;
+  width: 90vw;
+  overflow-x: hidden;
+}
+.loadAnima,#no_data_file{
+  color: white;
+}
+#no_data_file{
+
+}
+.loadAnima{
+  color: white;
+  font-size: 100px;
+  margin-top: 30vh ;
+  margin-bottom: 50vh ;
+}

@@ -1,0 +1,179 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+
+.Admin_box {
+  font-family: 'Abyssinica SIL', serif;
+    display: flex;
+    justify-content: center;
+    padding: 30px;
+    padding-left: 0px;
+    height: 100vh;
+    background-color: #f5f5f5;
+  }
+  
+  .Admin_box .container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px;
+    margin-top: 0px;
+   
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    margin-left:0px ;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .Admin_box .buttons {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .Admin_box .list {
+    flex: 2;
+    padding: 0 20px;
+  }
+  
+  .Admin_box  h2 {
+    margin-top: 0;
+    font-size: 24px;
+  }
+  
+  .Admin_box  button {
+    margin: 10px 0;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    width: 200px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .Admin_box button:hover {
+    background-color: #005fa3;
+  }
+  
+  .Admin_box ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .Admin_box li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .Admin_box  p {
+    margin: 20px 0;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .Admin_box  a {
+    color: #0077cc;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .Admin_box a:hover {
+    color: #005fa3;
+  }
+
+
+
+
+
+
+  .laptopbox{
+    font-family: 'Abyssinica SIL', serif;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .laptopbox h2 {
+    margin-top: 0;
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  
+  .laptopbox form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 500px;
+  }
+  
+  .laptopbox .form-group {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    width: 100%;
+    margin-bottom: 20px;
+  }
+  
+  .laptopbox label {
+    margin-bottom: 5px;
+    font-size: 16px;
+    font-weight: bold;
+  }
+  
+  .laptopbox input,
+  .laptopbox select {
+    width: 300px;
+    padding: 10px;
+    margin-left: 20px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+  }
+  
+  .laptopbox select {
+    height: 40px;
+  }
+  
+  .laptopbox ul {
+    list-style: none;
+    margin-top: 5px;
+    padding: 0;
+  }
+  
+  .laptopbox li {
+    margin-bottom: 5px;
+    font-size: 16px;
+    color: #333;
+  }
+  
+  .laptopbox button[type="submit"] {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #0077cc;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .laptopbox button[type="submit"]:hover {
+    background-color: #005fa3;
+  }
