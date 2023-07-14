@@ -1,51 +1,60 @@
 // ItemDetails.js
 
 import React, { useState, useEffect } from 'react';
-import axios from 'axios';
-import { Container, Row, Col, Card } from 'react-bootstrap';
 import { useParams } from 'react-router-dom';
+import supabase from "../supabase"
+import DisplayLap from './displayLap';
+import DisplayOther from "./displayOther";
+import DisplayPhone from "./diaplayPhone";
 
-function ItemDetails(props) {
-  const {_id} = useParams();
+
+function ItemDetails() {
+ 
+  const {id,type} = useParams();
   const [item, setItem] = useState(null);
 
   useEffect(() => {
-    axios.get(`http://localhost:5000/api/laptops/${_id}`)
-      .then(response => setItem(response.data))
-      .catch(error => console.log(error));
+    async function fetchRecords() {
+      
+let { data: others, error:itemsError } = await supabase
+.from(type)
+.select('*')
+.eq('id', `${id}`);
+     
+      if (itemsError) {
+        console.error(itemsError);
+        return;
+      }
+      else{
+        setItem(others);
+      }
+    }
+    fetchRecords();
   },);
 
-  return (
-    <Container>
-    {item ? (
-      <Card className="my-3">
-        <Row>
-          <Col md={4}>
-            <Card.Img src={`http://localhost:5000/uploads/${item.image}`} alt={item.name} />
-          </Col>
-          <Col md={8}>
-            <Card.Body>
-              <Card.Title>{item.name}</Card.Title>
-              <Card.Text>
-                <p><strong>Price:</strong> {item.price}</p>
-                <p><strong>Processor:</strong> {item.processor}</p>
-                <p><strong>Storage:</strong> {item.storage}</p>
-                <p><strong>RAM:</strong> {item.ram}</p>
-                <p><strong>Graphics Card:</strong> {item.graphicsCard}</p>
-                <p><strong>Operating System:</strong> {item.operatingSystem}</p>
-                <p><strong>Display Size:</strong> {item.displaySize}</p>
-                <p><strong>Display Resolution:</strong> {item.displayResolution}</p>
-                <p><strong>Ports:</strong> {item.ports.join(', ')}</p>
-              </Card.Text>
-            </Card.Body>
-          </Col>
-        </Row>
-      </Card>
-    ) : (
-      <p>Loading...</p>
-    )}
-  </Container>
-  );
+  if(type==="laptops"){
+    return (
+      <>
+      <DisplayLap item={item}/>
+      </>
+    );
+
+  }else if(type==="phones"){
+    return (
+      <>
+      <DisplayPhone item={item}/>
+      </>
+    );
+
+  }else{
+    return (
+      <>
+      <DisplayOther item={item}/>
+      </>
+    );
+
+  }
+  
 }
 
 export default ItemDetails;

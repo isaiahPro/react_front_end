@@ -1,12 +1,12 @@
 import React from 'react'
 import "../Style/sarchitem.css"
 
-function SearchItem({ name, price, id }) {
+function SearchItem({ name, price, id, type }) {
     return (
       <div className='searchItemMain'>
         <strong>{name}</strong>
         <section><strong>Price:</strong>{price}</section>
-        <p><a href={`/view/${id}`} id='itemlistwithPrice_view'>View</a></p>
+        <section><a href={`/view/${id}/${type}`} id='itemlistwithPrice_view'>View</a></section>
       </div>
     );
   }

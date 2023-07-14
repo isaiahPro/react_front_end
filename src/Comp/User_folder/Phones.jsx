@@ -3,6 +3,7 @@ import "../Style/laptop.css";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faSpinner } from '@fortawesome/free-solid-svg-icons';
 import { PhoneList } from '../ItemLIsts/AllItemList';
+const BucketURL=process.env.REACT_APP_SUPABASE_URL;
 
 
 function App() {
@@ -34,17 +35,17 @@ function App() {
 
       <div className="row row-cols-1 row-cols-md-3 g-4">
         { Phones.map(phone => (
-          <div key={phone._id} className="col">
+          <div key={phone.id} className="col">
             <div className="card h-100">
-              <img src={`http://localhost:5000/uploads/${phone.image}`} className="card-img-top" alt={phone.name} />
+              <img src={`${BucketURL}/bucketFileImage/images/${phone.image}.jpg`} className="card-img-top" alt={phone.name} />
               <div className="card-body"  id='laptop_list_container'>
                 <h5 className="card-title">{phone.name}</h5>
                 <ul className="list-unstyled">
-                  <li><strong>Brand:</strong> {phone.brand}</li>
-                  <li><strong>Model:</strong> {phone.model}</li>
-                  <li><strong>Price:</strong> ${phone.price}</li>
+                  <li><strong>name:</strong> {phone.name}</li>
+                  <li><strong>Price:</strong> {phone.price} Birr</li>
                   <li><strong>Storage:</strong> {phone.storage}</li>
                   <li><strong>RAM:</strong> {phone.ram}</li>
+                  <li><strong>DATE:</strong> {phone.created_at}</li>
                 </ul>
               </div>
             </div>

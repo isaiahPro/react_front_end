@@ -1,0 +1,59 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Abyssinica+SIL&display=swap');
+
+.add-laptop-form {
+    font-family: 'Abyssinica SIL', serif;
+    max-width: 700px;
+    padding: 30px;
+    margin: 0 auto;
+    border-radius: 15px;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;
+  }
+  
+  .add-laptop-form .form-label {
+    
+ 
+    display: block;
+    text-align: left;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  .add-laptop-form .form-input {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    font-size: 16px;
+  }
+  
+  .add-laptop-form .form-input[type="file"] {
+    padding: 0;
+  }
+  
+  .add-laptop-form .form-submit-button {
+    display: block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  .add-laptop-form .form-submit-button:hover {
+    background-color: #0069d9;
+  }
+  
+  .add-laptop-form .form-error {
+    color: red;
+    margin-top: 5px;
+  }
+  
+  .add-laptop-form .form-success {
+    color: green;
+    margin-top: 5px;
+  }

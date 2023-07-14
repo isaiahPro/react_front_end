@@ -1,43 +1,91 @@
 // apiData.js
+import supabase from '../supabase';
 
-import axios from 'axios';
-const apiKey = process.env.REACT_APP_API_KEY;
-async function LaptopList() {
-  const response = await axios.get(`${apiKey}/api/laptops`);
-  return response.data;
-}
+  async function LaptopList() {
+    const { data: itemsData, error: itemsError } = await supabase
+      .from('laptops')
+      .select('*')
+      .order('created_at', { ascending: false });
+
+    if (itemsError) {
+      console.error(itemsError);
+      return;
+    }
+    else{
+      return itemsData;
+    }
+  }
 async function PhoneList() {
-  const response = await axios.get(`${apiKey}/api/phones`);
-  return response.data;
+  const { data: itemsData, error: itemsError } = await supabase
+  .from('phones')
+  .select('*')
+  .order('created_at', { ascending: false });
+if (itemsError) {
+  console.error(itemsError);
+  return;
 }
+else{
+  return itemsData;
+}
+}
+async function OtherList() {
+  const { data: itemsData, error: itemsError } = await supabase
+  .from('others')
+  .select('*')
+  .order('created_at', { ascending: false })
+if (itemsError) {
+  console.error(itemsError);
+  return;
+}
+else{
+  return itemsData;
+}
+}
+
 async function LaptopListlimit() {
-  const response = await axios.get(`${apiKey}/api/laptops`, {
-    params: {
-      limit: 10,
-      sort: 'date',
-    },
-  });
-  return response.data;
+  const { data: itemsData, error: itemsError } = await supabase
+  .from('laptops')
+  .select('*')
+  .limit(9)
+  .order('created_at', { ascending: false })
+if (itemsError) {
+  console.error(itemsError);
+  return;
+}
+else{
+  return itemsData;
+}
 }
 async function PhoneListLimit() {
-  const response = await axios.get(`${apiKey}/api/phones`, {
-    params: {
-      limit: 10,
-      sort: 'date',
-    },
-  });
-  return response.data;
+  const { data: itemsData, error: itemsError } = await supabase
+  .from('phones')
+  .select('*')
+  .limit(9)
+  .order('created_at', { ascending: false });
+if (itemsError) {
+  console.error(itemsError);
+  return;
 }
+else{
+  return itemsData;
+}
+}
+
 
 
 async function OtherListLimit() {
-  const response = await axios.get(`${apiKey}/api/others`, {
-    params: {
-      limit: 10,
-      sort: 'date',
-    },
-  });
-  return response.data;
+  const { data: itemsData, error: itemsError } = await supabase
+  .from('others')
+  .select('*')
+  .limit(9)
+  .order('created_at', { ascending: false })
+if (itemsError) {
+  console.error(itemsError);
+  return;
+}
+else{
+  return itemsData;
+}
 }
 
-export { LaptopList,PhoneList,OtherListLimit,PhoneListLimit,LaptopListlimit};
+export { LaptopList,PhoneList,OtherListLimit,PhoneListLimit,LaptopListlimit,OtherList};

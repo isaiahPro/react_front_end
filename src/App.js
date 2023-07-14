@@ -23,7 +23,7 @@ function App() {
         <Route path="/other/:identity" element={<Other/>} />
         <Route path="/admin" element={<Admin/>} />
         <Route path="/signin" element={<SignInForm/>} />
-        <Route path="/view/:_id" element={<SpecificItem/>} />
+        <Route path="/view/:id/:type" element={<SpecificItem/>} />
         </Routes>
       </Router>
     </div>

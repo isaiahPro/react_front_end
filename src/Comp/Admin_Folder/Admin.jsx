@@ -3,6 +3,8 @@ import firebase from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import '../Style/admin.css'; 
 import AddNewLaptop from './AddLaptops';
+import AddPhone from "./addPhone"
+import AddOther from "./addOther";
 
 function Admin() {
   const navigate = useNavigate();
@@ -23,8 +25,6 @@ function Admin() {
   const [showPhones, setShowPhones] = useState(false);
   const [showOther, setShowOther] = useState(false);
 
-  const phones = ['iPhone', 'Samsung', 'Google Pixel'];
-  const otherItems = ['Headphones', 'Speakers', 'Webcams'];
 
   const handleLaptopsClick = () => {
     setShowLaptops(!showLaptops);
@@ -58,29 +58,22 @@ function Admin() {
           <div className="list">
             {showLaptops && (
               <div>
+                <h1>Add Laptop</h1>
                 <AddNewLaptop/>
               </div>
             )}
 
             {showPhones && (
               <div>
-                <h3>Phones</h3>
-                <ul>
-                  {phones.map((phone) => (
-                    <li key={phone}>{phone}</li>
-                  ))}
-                </ul>
+                <h1>Add Laptop</h1>
+              <AddPhone/>
               </div>
             )}
 
             {showOther && (
               <div>
-                <h3>Other Items</h3>
-                <ul>
-                  {otherItems.map((item) => (
-                    <li key={item}>{item}</li>
-                  ))}
-                </ul>
+                <h1>Add Laptop</h1>
+               <AddOther/>
               </div>
             )}
           </div>

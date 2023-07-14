@@ -90,7 +90,7 @@ function Nav_bar() {
         <ul className="search_list">
           {filteredItems.map((item, index) => (
             <div key={index}>
-              <SearchItem name={item.name} price={item.price} id={item._id} />
+              <SearchItem name={item.name} price={item.price} id={item.id} type={item.type} />
             </div>
           ))}
         </ul>

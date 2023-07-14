@@ -6,14 +6,13 @@ import HomeImage03 from "../Asset/HomeImage3.jpg";
 import HomeImage02 from "../Asset/homeImage2.jpg";
 import HomeImage01 from "../Asset/homeImage1.jpg";
 import { PhoneListLimit,LaptopListlimit,OtherListLimit } from '../ItemLIsts/AllItemList';
-const apiKey = process.env.REACT_APP_API_KEY;
+const BucketURL=process.env.REACT_APP_SUPABASE_URL;
 
 function Home() {
-
   const [showButton, setShowButton] = useState(false);
   const [laptops, setLaptops] = useState([]);
   const [phones, setPhones] = useState([]);
-  const [otherElectronics, setOthers] = useState([]);
+  const [other, setOthers] = useState([]);
   const [direct, setDirect]= useState('');
   const images= [
     HomeImage01,
@@ -80,12 +79,11 @@ function Home() {
       <ul className="category-list">
         {laptops.map((laptop, index) => (
           <li key={index}>
-            <img src={`${apiKey}/uploads/${laptop.image}`} alt={laptop.name} />
+            <img src={`${BucketURL}/bucketFile/images/${laptop.image}.jpg`} alt={laptop.name} />
             <div className="itemlistwithPrice">
             <section id='itemlistwithPrice_price' > <span id='innerspan_bold'></span>{laptop.name}</section>
               <section id='itemlistwithPrice_price' > <span id='innerspan_bold'>Price: </span>{laptop.price}Birr</section>
-              <section id='itemlistwithPrice_status' ><span id='innerspan_bold'>model: </span> {laptop.model}</section>
-              <section><a href={`/view/${laptop._id}`} id='itemlistwithPrice_view'>View</a></section>
+              <section><a href={`/view/${laptop.id}/${laptop.type}`} id='itemlistwithPrice_view'>View</a></section>
             </div>
           </li>
         ))}
@@ -94,26 +92,24 @@ function Home() {
       <ul className="category-list">
         {phones.map((phone, index) => (
           <li key={index}>
-            <img src={`${apiKey}/uploads/${phone.image}`} alt={phone.name} />
+            <img src={`${BucketURL}/bucketFileImage/images/${phone.image}.jpg`} alt={phone.name} />
             <div className="itemlistwithPrice">
             <section id='itemlistwithPrice_price' > <span id='innerspan_bold'></span>{phone.name}</section>
               <section id='itemlistwithPrice_price' > <span id='innerspan_bold'>Price: </span>{phone.price}Birr</section>
-              <section id='itemlistwithPrice_status' ><span id='innerspan_bold'>model: </span> {phone.model}</section>
-              <section><a href="/view" id='itemlistwithPrice_view'>View</a></section>
+              <section><a href={`/view/${phone.id}/${phone.type}`} id='itemlistwithPrice_view'>View</a></section>
             </div>
           </li>
         ))}
       </ul>
       <h2 className="category-title">Other Electronics</h2>
       <ul className="category-list">
-        {otherElectronics.map((electronic, index) => (
+        {other.map((electronic, index) => (
           <li key={index}>
-            <img src={`${apiKey}/uploads/${electronic.image}`} alt={electronic.name} />
+            <img src={`${BucketURL}/bucketFileImage01/images/${electronic.image}.jpg`} alt={electronic.name} />
             <div className="itemlistwithPrice">
             <section id='itemlistwithPrice_price' > <span id='innerspan_bold'></span>{electronic.name}</section>
               <section id='itemlistwithPrice_price' > <span id='innerspan_bold'>Price: </span>{electronic.price}Birr</section>
-              <section id='itemlistwithPrice_status' ><span id='innerspan_bold'>brand: </span> {electronic.brand}</section>
-              <section><a href="/view" id='itemlistwithPrice_view'>View</a></section>
+              <section><a href={`/view/${electronic.id}/${electronic.maintype}`} id='itemlistwithPrice_view'>View</a></section>
             </div>
           </li>
         ))}
